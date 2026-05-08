@@ -1,0 +1,42 @@
+{
+  "id": "laser-beholder",
+  "title": "Laser Beholder",
+  "description": "Emissores de raio de Beholder com mecânica de cobra (snake), espelhos mágicos e efeitos visuais via Sequencer + JB2A.",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "authors": [{ "name": "Mestre Ruim" }],
+
+  "manifest": "https://raw.githubusercontent.com/correamurilop/laser-beholder/main/module.json",
+  "download": "https://github.com/correamurilop/laser-beholder/releases/latest/download/laser-beholder.zip",
+  "url": "https://github.com/correamurilop/laser-beholder",
+
+  "scripts": [
+    "scripts/constants.js",
+    "scripts/LaserSystem.js",
+    "scripts/MirrorSystem.js",
+    "scripts/LaserVisual.js",
+    "scripts/LaserDialog.js",
+    "scripts/main.js"
+  ],
+  "styles": ["styles/laser-beholder.css"],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR.json"
+    }
+  ],
+  "relationships": {
+    "requires": [
+      { "id": "sequencer", "type": "module" },
+      { "id": "lib-wrapper", "type": "module" }
+    ],
+    "recommends": [
+      { "id": "JB2A_DnD5e", "type": "module" },
+      { "id": "jb2a_patreon", "type": "module" }
+    ]
+  }
+}

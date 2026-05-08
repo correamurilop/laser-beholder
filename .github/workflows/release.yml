@@ -1,0 +1,31 @@
+name: Release Laser Beholder
+
+on:
+  push:
+    tags:
+      - "v*"          # dispara em tags como v1.0.0, v1.2.3 etc.
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Criar zip do módulo
+        run: |
+          zip -r laser-beholder.zip \
+            module.json \
+            scripts/ \
+            styles/ \
+            lang/ \
+            README.md
+
+      - name: Publicar Release no GitHub
+        uses: softprops/action-gh-release@v2
+        with:
+          files: laser-beholder.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

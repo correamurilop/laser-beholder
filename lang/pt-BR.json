@@ -1,0 +1,13 @@
+{
+  "laser-beholder.configEmitter": "Configurar Emissor",
+  "laser-beholder.configMirror": "Configurar Espelho",
+  "laser-beholder.rayType": "Tipo de Raio",
+  "laser-beholder.direction": "Direção Inicial",
+  "laser-beholder.speed": "Velocidade (X quadrados/ativação)",
+  "laser-beholder.length": "Comprimento máximo (Y quadrados)",
+  "laser-beholder.frequency": "Frequência (a cada Z turnos)",
+  "laser-beholder.damage": "Fórmula de Dano",
+  "laser-beholder.damageType": "Tipo de Dano",
+  "laser-beholder.active": "Ativo",
+  "laser-beholder.mirrorAngle": "Ângulo do Espelho"
+}
