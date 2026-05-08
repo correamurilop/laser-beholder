@@ -78,5 +78,50 @@ Hooks.once("ready", () => {
     }
   });
 
+  // Cria as macros automaticamente no mundo
+  await _createMacros();
+
   console.log("Laser Beholder | pronto — use game.laserBeholder para macros");
 });
+
+/**
+ * Cria as macros utilitárias na aba de Macros do mundo se elas não existirem.
+ */
+async function _createMacros() {
+  const macrosToCreate = [
+    {
+      name: "Configurar Emissor de Laser",
+      command: "game.laserBeholder.configEmitter();",
+      img: "icons/svg/eye.svg"
+    },
+    {
+      name: "Configurar Espelho Mágico",
+      command: "game.laserBeholder.configMirror();",
+      img: "icons/svg/diamond.svg"
+    },
+    {
+      name: "Avançar Laser Manual",
+      command: "game.laserBeholder.advance();",
+      img: "icons/svg/wind.svg"
+    },
+    {
+      name: "Resetar Laser",
+      command: "game.laserBeholder.reset();",
+      img: "icons/svg/trash.svg"
+    }
+  ];
+
+  for (let m of macrosToCreate) {
+    let existing = game.macros.find(macro => macro.name === m.name);
+    if (!existing) {
+      await Macro.create({
+        name: m.name,
+        type: "script",
+        command: m.command,
+        img: m.img,
+        scope: "global"
+      });
+      console.log(`Laser Beholder | Macro criada: ${m.name}`);
+    }
+  }
+}

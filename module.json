@@ -35,8 +35,8 @@
       { "id": "lib-wrapper", "type": "module" }
     ],
     "recommends": [
-      { "id": "JB2A_DnD5e", "type": "module" },
-      { "id": "jb2a_patreon", "type": "module" }
+      { "id": "jb2a_patreon", "type": "module" },
+      { "id": "JB2A_DnD5e", "type": "module" }
     ]
   }
 }
